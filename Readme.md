@@ -14,6 +14,8 @@ A sleek and user-friendly TODO application built with React Native and React Nat
 
 ## Screenshots
 ![image](https://github.com/user-attachments/assets/95b0f758-e4fb-4b9d-9f76-ed52b6559eba)
+SWIPE TO DELETE
+![image](https://github.com/user-attachments/assets/a4d6426b-a6d6-4536-80fe-f0d1727c7597)
 
 
 ## Installation

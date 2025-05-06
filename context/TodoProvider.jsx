@@ -1,7 +1,6 @@
 import React, { useEffect, useState, createContext } from "react";
 import TaskAPI from "../services/TaskService.js"; 
 
-// Create the context
 export const TodoContext = createContext({
   todos: [],
   loading: false,
@@ -21,7 +20,7 @@ export const TodoProvider = ({ children }) => {
   const fetchTodos = async () => {
     setLoading(true);
     try {
-      const data = await TaskAPI.fetchTasks(); // ← renamed
+      const data = await TaskAPI.fetchTasks(); // Fetch tasks
       setTodos(data);
     } catch (err) {
       setError("Failed to fetch Todo.");
@@ -38,7 +37,7 @@ export const TodoProvider = ({ children }) => {
   const createTodo = async (todoData) => {
     setLoading(true);
     try {
-      await TaskAPI.createTask(todoData); // ← renamed
+      await TaskAPI.createTask(todoData);// Create a task
       fetchTodos();
     } catch (err) {
       setError("Failed to create Todo.");
@@ -52,7 +51,7 @@ export const TodoProvider = ({ children }) => {
   const updateTodo = async (todo) => {
     setLoading(true);
     try {
-      await TaskAPI.modifyTask(todo); // ← renamed
+      await TaskAPI.modifyTask(todo); // Update the task
       await fetchTodos();
     } catch (err) {
       setError("Failed to update Todo.");
@@ -66,7 +65,7 @@ export const TodoProvider = ({ children }) => {
   const deleteTodo = async (id) => {
     setLoading(true);
     try {
-      const success = await TaskAPI.removeTask(id); // ← renamed
+      const success = await TaskAPI.removeTask(id); // Removed the task
       if (success) {
         setTodos((prev) => prev.filter((p) => p.id !== id));
         return true;

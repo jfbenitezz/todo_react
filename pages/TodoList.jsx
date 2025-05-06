@@ -53,7 +53,7 @@ export default function TodoList() {
   const renderItem = ({ item }) => {
     const renderRightActions = () => (
       <View style={styles.rightAction}>
-        <Text style={styles.deleteText}>Eliminar</Text>
+        <Text style={styles.deleteText}>Delete</Text>
       </View>
     );
 
@@ -89,7 +89,7 @@ export default function TodoList() {
         style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
       >
         <ActivityIndicator size="large" />
-        <Text>Loading todos...</Text>
+        <Text>Loading data...</Text>
       </SafeAreaView>
     );
   }
